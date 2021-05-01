@@ -1,16 +1,51 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Form() {
-  const [firstName, setFirstName] = useState("John");
-  const [lastName, setLastName] = useState("Henry");
-
+function Form(props) {
   return (
     <form>
-      <input type="text" value={firstName} />
-      <input type="text" value={lastName} />
+      <input
+        type="text"
+        onChange={props.handleFirstNameChange}
+        value={props.firstName}
+      />
+      <input
+        type="text"
+        onChange={props.handleLastNameChange}
+        value={props.lastName}
+      />
       <button type="submit">Submit</button>
     </form>
   );
 }
 
-export default Form;
+export default Form; 
+
+  // const [firstName, setFirstName] = useState("Hanna");
+  // const [lastName, setLastName] = useState("Mulugeta");
+
+  // function handleFirstNameChange(e){
+  //   setFirstName(e.target.value)
+  // }
+
+
+  // function handleLastNameChange(e){
+  //   setLastName(e.target.value)
+  // }
+
+// console.log(props)
+//   return (
+//     <form>
+//       <input 
+//       type="text" 
+//       value={props.firstName}
+//       onChange={props.handleFirstNameChange} />
+//       <input 
+//       type="text" 
+//       value={props.lastName}
+//       onChange={props.handleLastNameChange} />
+//       <button type="submit">Submit</button>
+//     </form>
+//   );
+// }
+
+// export default Form;
